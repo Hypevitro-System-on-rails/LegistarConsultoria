@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
@@ -9,15 +9,17 @@ import { Contact } from "./pages/Contact";
 
 export const App = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/sobre" element={<About />} />
-        <Route path="/areas-de-atuacao" element={<Services />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contato" element={<Contact />} />
-      </Routes>
-    </div>
+    <BrowserRouter basename="/LegistarConsultoria">
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sobre" element={<About />} />
+          <Route path="/areas-de-atuacao" element={<Services />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contato" element={<Contact />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 };
